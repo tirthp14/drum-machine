@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
+}
+
+#drum-machine {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background: radial-gradient(circle at 75.9% 31.2%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    width: 50%;
+    height: 55%;
+    border: 5px solid #61635f;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+#drum-pad-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 60%;
+    height: 100%;
+    padding: 30px 0 30px 0;
+    margin: auto;
+}
+
+button {
+    font: 1.2rem 'Orbitron', sans-serif;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #c00205;
+    background: #555;
+    box-shadow: -3px 3px #c00205;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:active {
+    box-shadow: none;
+    transform: translate(-3px, 3px);
+}
+
+#display {
+    margin: auto;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 70px;
+    background-color: #444;
+    font: 24px 'Orbitron', sans-serif;
+    color: #FFF;
+    border-radius: 10px;
+}

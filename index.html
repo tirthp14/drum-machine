@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Drum Machine</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles-1.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+
+    <script>
+
+        const soundMap = {
+            Q: "Heater 1",
+            W: "Heater 2",
+            E: "Heater 3",
+            A: "Heater 4",
+            S: "Clap",
+            D: "Open HH",
+            Z: "Kick n' Hat",
+            X: "Kick",
+            C: "Closed HH"
+        };
+
+        function playSound(key) {
+            const display = document.getElementById("display");
+
+            const soundDescription = soundMap[key];
+            display.innerHTML = soundDescription;
+
+            const sound = document.getElementById(key);
+            sound.currentTime = 0;
+            sound.play();
+        }
+
+        window.document.onkeydown = function(event) {
+            const key = event.key.toUpperCase();
+            if (soundMap[key]) {
+                playSound(key)
+            } 
+        };
+
+    </script>
+
+</head>
+<body>
+    <div id="drum-machine">
+        <div id="drum-pad-block">
+            <button class="drum-pad" id="pad-1" onclick="playSound('Q')">
+                Q
+                <audio src="./Heater-1.mp3" class="clip" id="Q"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-2" onclick="playSound('W')">
+                W
+                <audio src="./Heater-2.mp3" class="clip" id="W"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-3" onclick="playSound('E')">
+                E
+                <audio src="./Heater-3.mp3" class="clip" id="E"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-4" onclick="playSound('A')">
+                A
+                <audio src="./Heater-4_1.mp3" class="clip" id="A"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-5" onclick="playSound('S')">
+                S 
+                <audio src="./Heater-6.mp3" class="clip" id="S"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-6" onclick="playSound('D')">
+                D
+                <audio src="./Dsc_Oh.mp3" class="clip" id="D"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-7" onclick="playSound('Z')">
+                Z
+                <audio src="./Kick_n_Hat.mp3" class="clip" id="Z"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-8" onclick="playSound('X')">
+                X
+                <audio src="./RP4_KICK_1.mp3" class="clip" id="X"></audio>
+            </button>
+
+            <button class="drum-pad" id="pad-9" onclick="playSound('C')">
+                C
+                <audio src="./Cev_H2.mp3" class="clip" id="C"></audio>
+            </button>
+        </div>
+        <div id="display"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
